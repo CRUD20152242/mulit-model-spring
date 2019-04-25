@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>crawer-config</artifactId>
+        <groupId>com.ccut.crawer</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>config-common</artifactId>
+<!--<dependencies>-->
+    <!--引入自己的模块-->
+    <!--<dependency>-->
+        <!--<groupId>com.ccut.crawer</groupId>-->
+        <!--<artifactId>config-service</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.ccut.crawer</groupId>-->
+        <!--<artifactId>config-client</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.ccut.crawer</groupId>-->
+        <!--<artifactId>config-dao</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.ccut.crawer</groupId>-->
+        <!--<artifactId>config-web</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</dependency>-->
+    <!--引入自己模块结束-->
+<!--</dependencies>-->
+
+</project>

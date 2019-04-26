@@ -20,6 +20,11 @@
             <artifactId>config-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--lombok包  需要安装插件-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>com.ccut.crawer</groupId>-->
             <!--<artifactId>config-client</artifactId>-->

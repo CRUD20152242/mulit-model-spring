@@ -30,8 +30,6 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-    <script src="./resources/js/jqueryForm.js"></script>
-    <script src="./resources/js/serach.js"></script>
 
 </head>
 
@@ -56,17 +54,17 @@
                 <li><a href="#contact"></a></li>
 
             </ul>
-            <form class="navbar-form navbar-right" action="http://localhost:8080/allPaths" method="get" id="form1">
-                    <select class="btn btn-default dropdown-toggle form-group" name="scope">
+            <form class="navbar-form navbar-right">
+                    <select class="btn btn-default dropdown-toggle form-group" name="scope" id="selectScope">
                         <option value="all">all</option>
                         <option value="onlyMyself">only myself</option>
                         <option value="onlyOne">only one</option>
                     </select>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="path">
+                    <input type="text" class="form-control" placeholder="以/开头" name="path" id="pathId">
                 </div>
-                <button type="submit" class="btn btn-success">查询</button>
+                <button type="button" class="btn btn-success" id="searchId">查询</button>
             </form>
         </div><!--/.nav-collapse -->
     </div>
@@ -74,51 +72,17 @@
 
 <div class="container">
     <!--path显示-->
-        <div class="panel panel-default">
-            <div class="panel-heading  panel-primary">
-                <h3 class="panel-title">path</h3>
+    <div id="showPaths">
+        <div class="row">
+            <div class="col-lg-6 leftPath">
+                说明： all  无论是否输入都会查询所有路径,其余选项 需要输入指定路径
+            </div>
+            <div class="col-lg-6 rightPath">
+                    有问题联系管理员 qq 2314449060
+            </div>
+        </div>
 
-            </div>
-            <div class="panel-body">
-                config/ad
-            </div>
-            <div class="panel-info">
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">删除</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">详情</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">修改</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!--path显示结束 下一个开始-->
-    <div class="panel panel-default">
-        <div class="panel-heading  panel-primary">
-            <h3 class="panel-title">path</h3>
 
-        </div>
-        <div class="panel-body">
-            config/ad
-        </div>
-        <div class="panel-info">
-            <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">详情</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">修改</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- 按钮触发模态框 -->
     <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">-->
@@ -201,9 +165,6 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-<script src="./resources/js/config.js"></script>
-<form action="http://localhost:8080/allPaths" >
-    <button>submit</button>>
-</form>
+<script src="./resources/js/serach.js"></script>
 </body>
 </html>

@@ -35,10 +35,20 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <!--spring配置文件的位置-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-config.xml</param-value>
   </context-param>
+  <!--log4j配置文件的日志-->
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+  <!-- 利用spring来使用log4j -->
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
 
 <!--把拦截工作交给spring的拦截器-->
   <servlet>

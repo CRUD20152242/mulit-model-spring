@@ -30,7 +30,9 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
+    <script src="./resources/js/jqueryForm.js"></script>
     <script src="./resources/js/serach.js"></script>
+
 </head>
 
 <body  style="padding-top: 70px;">
@@ -54,15 +56,15 @@
                 <li><a href="#contact"></a></li>
 
             </ul>
-            <form class="navbar-form navbar-right" action="http://localhost:8080/allPaths" method="get">
-                    <select class="btn btn-default dropdown-toggle form-group">
+            <form class="navbar-form navbar-right" action="http://localhost:8080/allPaths" method="get" id="form1">
+                    <select class="btn btn-default dropdown-toggle form-group" name="scope">
                         <option value="all">all</option>
-                        <option value="myself">only myself</option>
-                        <option value="one">only one</option>
+                        <option value="onlyMyself">only myself</option>
+                        <option value="onlyOne">only one</option>
                     </select>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search" name="path">
                 </div>
                 <button type="submit" class="btn btn-success">查询</button>
             </form>

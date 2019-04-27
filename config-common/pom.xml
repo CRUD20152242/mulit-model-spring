@@ -10,8 +10,51 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>config-common</artifactId>
-<!--<dependencies>-->
+<dependencies>
+    <!--日志系统-->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+    </dependency>
+    <!--lombok包  需要安装插件-->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+<!--spring的jar包-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+    </dependency>
     <!--引入自己的模块-->
+
     <!--<dependency>-->
         <!--<groupId>com.ccut.crawer</groupId>-->
         <!--<artifactId>config-service</artifactId>-->
@@ -33,6 +76,6 @@
         <!--<version>1.0-SNAPSHOT</version>-->
     <!--</dependency>-->
     <!--引入自己模块结束-->
-<!--</dependencies>-->
+</dependencies>
 
 </project>

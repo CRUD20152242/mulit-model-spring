@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body  style="padding-top: 70px;">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand " href="tips.html">统一用户配置中心</a></li>
+                <li><a href="searchPath.html">查询path</a></li>
+                <li class="active"><a href="createPath.html">创建path</a>
+                </li>
+
+
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <h3>创建path:</h3>
+            <div class="input-group">
+                <span class="input-group-addon">path：</span>
+                <input type="text" class="form-control" placeholder="创建path以 / 开头和分割" id="inputPath">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button" id="createPath">创建path</button>
+                </span>
+            </div>
+
+            <h3>添加在此节点的数据:</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group" id="keyGroup1">
+                        <span class="input-group-addon key1" id="sizing-addon3">key = </span>
+                        <input type="text" class="form-control" aria-label="..." id="key1">
+                    </div>
+                    <br class="keyGroup1"/>
+                    <div class="input-group" id="keyGroup2">
+                        <span class="input-group-addon key2" >key = </span>
+                        <input type="text" class="form-control" aria-label="..." id="key2">
+
+                    </div>
+                    <br class="keyGroup2"/>
+                    <div id="addKey">
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group" id="valueGroup1">
+                        <span class="input-group-addon value1">value = </span>
+                        <input type="text" class="form-control" aria-label="..." id="value1">
+                    </div>
+                        <br class="valueGroup1"/>
+                    <div class="input-group" id="valueGroup2">
+                        <span class="input-group-addon value2">value = </span>
+                        <input type="text" class="form-control" aria-label="..." id="value2">
+                    </div>
+                     <br class="valueGroup2"/>
+                    <div id="addValue">
+
+                    </div>
+
+                </div>
+                <button class="btn-success btn btn-lg" id="addIteam"> 添加</button>
+                <button class="btn-danger btn btn-lg" id="deleteIteam"> 删除</button>
+                <button class="btn-danger btn btn-lg" id="submitData"> 确定提交</button>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    注意：如果创建path时不提供数据，在该节点默认的数据为空字符串，如需修改请到<br/>
+                    查询path->详情-修改数据
+                    <a href="#" class="close" data-dismiss="alert">
+                        &times;
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<!--<script src="./resources/js/config.js"></script>-->
+<script src="./resources/js/config.js"></script>
+</body>
+</html>

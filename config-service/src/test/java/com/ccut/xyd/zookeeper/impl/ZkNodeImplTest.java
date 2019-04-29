@@ -2,6 +2,7 @@ package com.ccut.xyd.zookeeper.impl;
 
 import com.ccut.xyd.GetZKClient;
 import com.ccut.xyd.zookeeper.ZkNodeOp;
+import com.google.gson.Gson;
 import org.apache.curator.framework.CuratorFramework;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.*;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-//加载配置文件位置
-//@ContextConfiguration("classpath:spring-config.xml")
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class ZkNodeImplTest {
 
     CuratorFramework zkClient;
@@ -51,5 +52,32 @@ public class ZkNodeImplTest {
             }
             System.out.println("删除参数错误的节点："+zkClient.delete().forPath("temp"));
         }
+    }
+
+    @Test
+    public void testHashMap(){
+        HashMap<String,String> hashMap = new HashMap();
+        hashMap.put("key1","value1");
+        hashMap.put("key2","value2");
+        hashMap.put("key3","value3");
+
+        Gson gson = new Gson();
+        String str = gson.toJson(hashMap);
+        System.out.println("转换后的json为");
+        System.out.println(str);
+
+        System.out.println("然后含有相同的key 转化后的结果为");
+
+        String nstr = str.replace("key2","key1");
+
+        System.out.println("替换后的返回值时"+nstr);
+        System.out.println("str = "+str);
+        hashMap = gson.fromJson(nstr,HashMap.class);
+
+        for (String key:hashMap.keySet()) {
+            System.out.println(hashMap.get(key));
+        }
+
+
     }
 }

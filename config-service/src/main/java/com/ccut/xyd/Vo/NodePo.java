@@ -11,7 +11,6 @@ import java.util.HashMap;
 @ToString
 public class NodePo {
     private String path;
-    private HashMap hashData;
-    private String data;
+    private String datas;
 
 }

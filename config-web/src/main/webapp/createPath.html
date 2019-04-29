@@ -60,27 +60,27 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
             <h3>创建path:</h3>
             <div class="input-group">
                 <span class="input-group-addon">path：</span>
                 <input type="text" class="form-control" placeholder="创建path以 / 开头和分割" id="inputPath">
                 <span class="input-group-btn">
-                    <button class="btn btn-success" type="button" id="createPath">创建path</button>
+                    <button class="btn btn-success" type="button" id="createPath">测试</button>
                 </span>
             </div>
 
             <h3>添加在此节点的数据:</h3>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="input-group" id="keyGroup1">
-                        <span class="input-group-addon key1" id="sizing-addon3">key = </span>
+                        <span class="input-group-addon key1" id="sizing-addon3">key</span>
                         <input type="text" class="form-control" aria-label="..." id="key1">
                     </div>
                     <br class="keyGroup1"/>
                     <div class="input-group" id="keyGroup2">
-                        <span class="input-group-addon key2" >key = </span>
+                        <span class="input-group-addon key2" >key</span>
                         <input type="text" class="form-control" aria-label="..." id="key2">
 
                     </div>
@@ -89,14 +89,14 @@
 
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="input-group" id="valueGroup1">
-                        <span class="input-group-addon value1">value = </span>
+                        <span class="input-group-addon value1">value</span>
                         <input type="text" class="form-control" aria-label="..." id="value1">
                     </div>
                         <br class="valueGroup1"/>
                     <div class="input-group" id="valueGroup2">
-                        <span class="input-group-addon value2">value = </span>
+                        <span class="input-group-addon value2">value</span>
                         <input type="text" class="form-control" aria-label="..." id="value2">
                     </div>
                      <br class="valueGroup2"/>
@@ -105,19 +105,35 @@
                     </div>
 
                 </div>
+                <div class="col-lg-4">
+                    <div class="input-group" id="tipsGroup1">
+                        <span class="input-group-addon">说明：</span>
+                        <input type="text" class="form-control" aria-label="..." id="tips1">
+                    </div>
+                    <br class="valueGroup1"/>
+                    <div class="input-group" id="tipsGroup2">
+                        <span class="input-group-addon ">说明：</span>
+                        <input type="text" class="form-control" aria-label="..." id="tips2">
+                    </div>
+                    <br class="valueGroup2"/>
+                    <div id="addTips">
+
+                    </div>
+
+                </div>
                 <button class="btn-success btn btn-lg" id="addIteam"> 添加</button>
                 <button class="btn-danger btn btn-lg" id="deleteIteam"> 删除</button>
-                <button class="btn-danger btn btn-lg" id="submitData"> 确定提交</button>
+                <button class="btn-danger btn btn-lg" id="submitData"> 确定添加</button>
                 <div class="alert alert-danger alert-dismissible" role="alert">
                     注意：如果创建path时不提供数据，在该节点默认的数据为空字符串，如需修改请到<br/>
-                    查询path->详情-修改数据
+                    查询path->详情-修改数据 ，本页面添加的数据会覆盖原来的数据
                     <a href="#" class="close" data-dismiss="alert">
                         &times;
                     </a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3"></div>
+        <div class="col-lg-2"></div>
     </div>
 
 </div>

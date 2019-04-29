@@ -125,17 +125,38 @@ function editValue(path) {
 }
 //查看path的数据详情 禁止修改
 function showDatas(path) {
+
+    $.ajax({
+        url : "http://localhost:8080/config/getData",
+        type : "post",
+        data : {
+            "path":path,
+        },
+        dataType:"json",
+        success :getDataSuccess,
+        error:function (f) {
+            alert("未知错误 联系管理员 qq 2314449060" +f)
+        }
+    });
+
+}
+
+function getDataSuccess(data) {
+    var content = "";
+    for (var key in data){
+        content += "<tr>" +
+            "              <td>"+key+"</td>" +
+            "              <td>"+data[key]+"</td>" +
+            "               <td>" +
+            "                     <div class=\"btn-group\">" +
+            "                        <button type=\"button\" class=\"btn btn-default disabled\">详情页禁止修改数据</button>" +
+            "                     </div>" +
+            "                </td>" +
+            "           </tr>"
+  }
+
     //todo 针对path多数据的显示在这里修改
-    var content = "<tr>" +
-        "              <td>data.key</td>" +
-        "              <td>data.value</td>" +
-        "              <td>"+path+"</td>" +
-        "               <td>" +
-        "                     <div class=\"btn-group\">" +
-        "                        <button type=\"button\" class=\"btn btn-default disabled\">详情页禁止修改数据</button>" +
-        "                     </div>" +
-        "                </td>" +
-        "           </tr>"
+
 
     $("tbody").html(content)
 }

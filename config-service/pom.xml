@@ -13,6 +13,10 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
 
         <!--引入自己的模块-->
         <dependency>

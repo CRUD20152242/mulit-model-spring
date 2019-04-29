@@ -3,6 +3,7 @@ package com.ccut.xyd.zookeeper.impl;
 import com.ccut.xyd.GetZKClient;
 import com.ccut.xyd.Vo.NodePo;
 import com.ccut.xyd.zookeeper.ZkNodeOp;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.curator.framework.CuratorFramework;
@@ -41,8 +42,8 @@ public class ZkNodeImpl implements ZkNodeOp {
         CuratorFramework zkCli = GetZKClient.getZkClient();
         String gerRes = "init";
         try {
-            if (StringUtils.isNotEmpty(nodePo.getData())||null!=nodePo.getHashData()){
-                gerRes = zkCli.create().forPath(path,nodePo.getData().getBytes());
+            if (StringUtils.isNotEmpty(nodePo.getDatas())){
+                gerRes = zkCli.create().forPath(path,nodePo.getDatas().getBytes());
             }else {
                 gerRes = zkCli.create().forPath(path);
             }
@@ -60,18 +61,18 @@ public class ZkNodeImpl implements ZkNodeOp {
         return res;
     }
 
-    public boolean addData(String path, String data) {
+    public String addData(String path, String data) {
         log.info("准备添加数据 path = {}，data = {}",path,data);
         CuratorFramework zkCli = GetZKClient.getZkClient();
 
         try {
             zkCli.setData().forPath(path,data.getBytes());
-            return true;
+            return "添加成功";
         } catch (Exception e) {
             log.error("向节点添加数据失败 path = {},data = {}",path,data);
             e.printStackTrace();
         }
-        return false;
+        return "添加失败";
     }
 
     public String getData(String path) {
@@ -79,6 +80,7 @@ public class ZkNodeImpl implements ZkNodeOp {
         CuratorFramework zkCli = GetZKClient.getZkClient();
         try {
             String result = new String(zkCli.getData().forPath(path));
+            log.info("{} 的数据时 ：{}",path,result);
             return result;
         } catch (Exception e) {
             log.error("获取数据错误 ");

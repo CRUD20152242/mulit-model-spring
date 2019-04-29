@@ -43,7 +43,7 @@ public class ZkNodeImpl implements ZkNodeOp {
         String gerRes = "init";
         try {
             if (StringUtils.isNotEmpty(nodePo.getDatas())){
-                gerRes = zkCli.create().forPath(path,nodePo.getDatas().getBytes());
+                gerRes = zkCli.create().forPath(path,nodePo.getDatas().getBytes("GBK"));
             }else {
                 gerRes = zkCli.create().forPath(path);
             }
@@ -55,7 +55,7 @@ public class ZkNodeImpl implements ZkNodeOp {
             }
         } catch (Exception e) {
             log.error("创建节点失败，节点可能已经存在了 返回结果为：{}",gerRes);
-            res="创建失败 创建父节点不存在";
+            res="创建失败 创建父节点不存在或节点已存在";
             e.printStackTrace();
         }
         return res;
@@ -66,7 +66,7 @@ public class ZkNodeImpl implements ZkNodeOp {
         CuratorFramework zkCli = GetZKClient.getZkClient();
 
         try {
-            zkCli.setData().forPath(path,data.getBytes());
+            zkCli.setData().forPath(path,data.getBytes("GBK"));
             return "添加成功";
         } catch (Exception e) {
             log.error("向节点添加数据失败 path = {},data = {}",path,data);

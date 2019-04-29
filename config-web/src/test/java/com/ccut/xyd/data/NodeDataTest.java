@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -37,8 +38,14 @@ public class NodeDataTest {
         data = gson.toJson(hashMap);
 
         nodePo.setPath("/p");
-        String addData = "{\"默认的key\":[\"默认的value\",\"默认测试数据 添加数据时会覆盖\"],\"默认的key2\":[\"默认的value\",\"默认测试数据 添加数据时会覆盖\"]}";
-        nodePo.setDatas(addData);
+        String addData = "{\"默认key\":[\"默认的value\",\"默认测试数据 添加数据时会覆盖\"],\"默认的key2\":[\"默认的value\",\"默认测试数据 添加数据时会覆盖\"]}";
+        try {
+            String data = new String(addData.getBytes("utf-8"),"utf-8");
+            nodePo.setDatas(addData);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Test

@@ -9,6 +9,7 @@ import lombok.ToString;
 @ToString
 public class NodeVo {
     private String path;
-    private String key;
-    private String value;
+    private String datas;
+    private String delDatas;
+
 }

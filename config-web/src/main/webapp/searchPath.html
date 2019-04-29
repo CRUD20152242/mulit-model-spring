@@ -92,12 +92,12 @@
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                       path:
+                        path:<span id="path"></span>
                     </h4>
                 </div>
                 <div class="modal-body">
 
-                    <table class="table">
+                    <table class="table input-group">
                         <!--<caption>基本的表格布局</caption>-->
                         <thead>
                         <tr>
@@ -107,7 +107,7 @@
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                         <!--<tr>-->
                             <!--<td>-->
                                 <!--<div class="btn-group">-->
@@ -120,10 +120,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="submitAll">确定
                     </button>
                 </div>
             </div><!-- /.modal-content -->

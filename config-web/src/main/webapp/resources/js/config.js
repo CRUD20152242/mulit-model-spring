@@ -59,31 +59,36 @@ function addkey() {
 //提交数据
 //todo 添加路径与判空操作
 function submitData() {
+    if(!confirm("创建节点时请先创建path 若path已存在则会覆盖原来的数据 是否继续？")){
+        return
+    }
+    var iteam="";
 var first = "{";
 var  content = "";
 var last = "}";
 var path = $("#inputPath").val();
-        for (var index = 1;index <=count;index++) {
+        for (var index = 1;index <count;index++) {
             var key = $("#key"+index).val()
-            var key1;
-            if(index<count){
-
-                key1 = $("#key"+index+1).val()
-            }
-
             if (key =="") {
                 break;
             }
             var value=$("#value"+index).val()
             var tips =$("#tips"+index).val();
-            var iteam="";
-            if(index!=count&&!$.isEmptyObject(key1)){
-                iteam = key+":[\""+value+"\",\""+tips+"\"],"
-            }else {
-                iteam = key+":[\""+value+"\",\""+tips+"\"]"
-            }
+
+                iteam = "\""+key+"\":[\""+value+"\",\""+tips+"\"],"
+
+
+
             content +=iteam
         }
+    var key = $("#key"+count).val()
+    if (key =="") {
+        alert("有key为null  请删除或者填入")
+    }
+    var value=$("#value"+count).val()
+    var tips =$("#tips"+count).val();
+        iteam = "\""+key+"\":[\""+value+"\",\""+tips+"\"]"
+    content+=iteam
         var datas = first+content+last;
 
     $.ajax({
@@ -104,7 +109,7 @@ var path = $("#inputPath").val();
 }
 
 function addSucess(f) {
-    alert(f.message)
+    alert(f.mesaage)
 }
 
 function deleteIteam() {
